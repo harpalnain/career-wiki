@@ -1,0 +1,34 @@
+# --- Personal data: never commit ---
+raw/
+wiki/
+output/
+log.md
+
+# Working notes / temporary specs
+docs/
+
+# --- Local tool state ---
+.obsidian/
+.claude/settings.local.json
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Python (in case scripts get added) ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# --- Logs ---
+*.log

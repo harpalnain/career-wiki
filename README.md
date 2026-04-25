@@ -66,3 +66,7 @@ Contact details live only in `wiki/profile.md`, and only your own. NDA-covered s
 5. From then on, ask questions, tailor applications, or generate profiles whenever you need them.
 
 The wiki gets richer the more you feed it. Treat `raw/` as your inbox.
+
+---
+
+> Generated from [career-wiki](https://github.com/harpalnain/career-wiki) — an LLM-maintained career wiki template.

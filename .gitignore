@@ -1,5 +1,7 @@
 # --- Personal data: never commit ---
-raw/
+# Track the empty raw/ folder (placeholder) but ignore any source documents dropped in.
+raw/*
+!raw/.gitkeep
 wiki/
 output/
 log.md

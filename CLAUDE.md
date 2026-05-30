@@ -61,7 +61,8 @@ Do **not** read `raw/` on session start. The subagents open `raw/` only when a w
 │   ├── skills/
 │   ├── education/
 │   ├── companies/
-│   ├── achievements/
+│   ├── achievements/    # awards / wins (e.g., YCMAD)
+│   ├── certifications/  # external credentials (Coursera, IBM, AWS, etc.)
 │   ├── stories/
 │   ├── applications/
 │   ├── people/
@@ -82,7 +83,7 @@ Every wiki page starts with frontmatter:
 
 ```yaml
 ---
-type: profile | experience | project | skill | education | company | achievement | story | application | person | source | question
+type: profile | experience | project | skill | education | company | achievement | certification | story | application | person | source | question
 title: Canonical name
 aliases: [other names this is called]
 created: YYYY-MM-DD
@@ -109,6 +110,8 @@ Never write the following into any generated file (wiki page, HTML profile, inte
 - References' private phone/email (store only name, relationship, company).
 
 Contact details belong only in `wiki/profile.md`, and only the user's own professional contacts.
+
+**Carve-out (2026-04-26):** Contact details explicitly recorded in `wiki/profile.md`'s "Standing instructions for outputs" section may be included on CVs, HTML profiles, cover letters, and other application outputs by default. Currently scoped: professional mobile, LinkedIn URL. Contact items from any other source (raw documents, conversation, third parties) remain private and must not be written into outputs.
 
 If a source is NDA-covered or privileged, cite it by source slug but paraphrase — don't quote verbatim.
 

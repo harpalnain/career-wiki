@@ -4,6 +4,10 @@ An LLM-maintained knowledge base about your professional life — resumes, proje
 
 > Inspired by [Andrej Karpathy's LLM Wiki idea](https://x.com/karpathy/status/1884252385253169969) — the notion that an LLM can act as a long-running personal librarian, ingesting raw artifacts over time and maintaining a clean, queryable, hand-editable knowledge base on your behalf.
 
+## Demo
+
+![Career Wiki demo](assets/demo.gif)
+
 ## What it's for
 
 In priority order:

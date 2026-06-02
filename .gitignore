@@ -2,9 +2,8 @@
 # Track the empty raw/ folder (placeholder) but ignore any source documents dropped in.
 raw/*
 !raw/.gitkeep
-wiki/
-output/
-log.md
+# Note: wiki/, output/, and log.md are tracked so the repo can ship sample
+# demo content. Fork users who add real career data should re-add these here.
 
 # Working notes / temporary specs
 docs/

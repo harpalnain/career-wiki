@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maya Sharma — Interview Revision Plan (Staff Software Engineer)</title>
+<style>
+  :root { --ink:#111; --muted:#555; --line:#111; --chip:#f3f4f6; --accent:#0f5132; --warn:#92400e; }
+  * { box-sizing: border-box; }
+  body { font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; max-width: 820px;
+         margin: 2rem auto; padding: 0 1.5rem; color: var(--ink); font-size: 14px; line-height: 1.5; }
+  h1 { font-size: 1.8rem; margin: 0; letter-spacing: -0.01em; }
+  .role { font-size: 1rem; color: var(--accent); font-weight: 600; margin: 0.25rem 0 0.2rem; }
+  .kicker { display: inline-block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
+            background: var(--ink); color: #fff; padding: 0.15rem 0.5rem; border-radius: 3px; }
+  .meta { color: var(--muted); font-size: 0.88em; }
+  h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.08em;
+       border-bottom: 1px solid var(--line); padding-bottom: 0.2rem; margin-top: 1.9rem; }
+  h3 { font-size: 0.95rem; margin: 1rem 0 0.3rem; }
+  code, .mono { font-family: 'JetBrains Mono','Consolas',monospace; font-size: 0.82em;
+                background: var(--chip); padding: 0.05rem 0.35rem; border-radius: 3px; }
+  ul { padding-left: 1.1rem; margin: 0.35rem 0; }
+  .check { list-style: none; padding-left: 0; }
+  .check li { margin: 0.28rem 0; display: flex; gap: 0.5rem; align-items: flex-start; }
+  .check input { margin-top: 0.25rem; }
+  .callout { border-left: 4px solid var(--warn); background: #fffbeb; padding: 0.6rem 0.9rem;
+             margin: 0.8rem 0; font-size: 0.93em; }
+  .callout strong { color: var(--warn); }
+  .learn { border-left: 3px solid var(--accent); padding: 0.1rem 0 0.1rem 0.8rem; margin: 0.7rem 0; }
+  .learn .what { font-weight: 600; }
+  .learn .res { color: var(--muted); font-size: 0.9em; font-style: italic; }
+  .weeks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.6rem; }
+  .week { border: 1px solid #ddd; border-radius: 6px; padding: 0.6rem 0.9rem; }
+  .week h3 { margin-top: 0.2rem; }
+  footer { margin-top: 2.2rem; border-top: 1px solid #ccc; padding-top: 0.6rem;
+           color: var(--muted); font-size: 0.82em; }
+  #pdf-btn { position: fixed; top: 1rem; right: 1rem; padding: 0.45rem 0.95rem;
+             background: var(--ink); color: #fff; border: none; font-family: inherit;
+             font-size: 0.85rem; border-radius: 4px; cursor: pointer; }
+  @media print {
+    #pdf-btn { display: none; }
+    @page { size: A4; margin: 12mm; }
+    body { font-size: 10.5pt; max-width: none; margin: 0; }
+    section, .week, .learn, .callout { page-break-inside: avoid; }
+    code, .mono { background: transparent; padding: 0; }
+    .callout { background: transparent; }
+  }
+</style>
+</head>
+<body>
+<button id="pdf-btn">Save as PDF</button>
+
+<header>
+  <span class="kicker">Interview Prep Plan</span>
+  <h1>Maya Sharma</h1>
+  <p class="role">Target: Staff Software Engineer &mdash; Backend / Distributed Systems</p>
+  <p class="meta">Tickable study sheet &middot; generated 2026-05-31 &middot; companion to <code>profile.html</code></p>
+  <div class="callout">
+    <strong>Staff-level focus.</strong> Your technical evidence is strong; the <em>staff-scope</em> evidence is thin.
+    Interviewers will probe people leadership (only &ldquo;mentored 4 juniors&rdquo; + code-review standards &mdash;
+    no team-lead title or reporting line), the true scope of &ldquo;led migration,&rdquo; missing team sizes, and the
+    absence of RFC / tech-strategy / org-design artifacts. The Learn section and the gap-days in the plan target these.
+    Frame honestly &mdash; do not invent.
+  </div>
+</header>
+
+<section id="revise">
+  <h2>Revise &mdash; what you already have</h2>
+
+  <h3>Go (flagship language)</h3>
+  <ul class="check">
+    <li><input type="checkbox"> Concurrency: goroutines, channels, <code>context</code> cancellation, worker pools.</li>
+    <li><input type="checkbox"> Perf: escape analysis, GC tuning, <code>pprof</code> profiling.</li>
+    <li><input type="checkbox"> Service design: graceful shutdown, connection pooling, backpressure.</li>
+    <li><input type="checkbox"> Whiteboard a slice of the Flowcart microservices from memory.</li>
+  </ul>
+
+  <h3>Kafka / distributed systems</h3>
+  <ul class="check">
+    <li><input type="checkbox"> Delivery semantics, idempotent producers, transactions.</li>
+    <li><input type="checkbox"> Consumer groups, partition assignment, rebalancing, offsets.</li>
+    <li><input type="checkbox"> Ordering guarantees, partition keys, compaction vs. retention.</li>
+    <li><input type="checkbox"> Connect to the order-pipeline story and the PyCon &ldquo;Exactly-once is a lie&rdquo; thesis.</li>
+  </ul>
+
+  <h3>Python</h3>
+  <ul class="check">
+    <li><input type="checkbox"> Async vs. multiprocessing vs. threading; GIL implications.</li>
+    <li><input type="checkbox"> Maintainership lessons from the Airflow operator library (~300 stars).</li>
+  </ul>
+
+  <h3>Airflow / ETL</h3>
+  <ul class="check">
+    <li><input type="checkbox"> DAG design, idempotency, retries, backfills, scheduler internals.</li>
+    <li><input type="checkbox"> Partitioning + parallelism that drove the 6h&rarr;90min win.</li>
+  </ul>
+
+  <h3>AWS (note: SAA expired Sep 2025)</h3>
+  <ul class="check">
+    <li><input type="checkbox"> Refresh EC2 / S3 / Lambda / Redshift.</li>
+    <li><input type="checkbox"> Redshift tuning: distkeys/sortkeys, vacuum/analyze.</li>
+    <li><input type="checkbox"> Prepare an honest SAA-lapse + renewal-intent talking point.</li>
+  </ul>
+
+  <h3>Distributed-systems fundamentals (cross-cutting)</h3>
+  <ul class="check">
+    <li><input type="checkbox"> CAP, consistency models, idempotency, outbox/saga, dedup.</li>
+    <li><input type="checkbox"> Latency budgets, p99 vs. mean; <em>what</em> drove 800ms&rarr;120ms.</li>
+  </ul>
+</section>
+
+<section id="learn">
+  <h2>Learn &mdash; commonly expected at staff level</h2>
+  <p class="meta">Framed as commonly expected for this role &mdash; growth areas, not current claims.</p>
+
+  <div class="learn">
+    <div class="what">System design at scale (breadth)</div>
+    <div>End-to-end multi-service design, capacity estimation, failure-domain reasoning.</div>
+    <div class="res">Resource: book (data-intensive systems text), a system-design course, engineering blogs.</div>
+  </div>
+
+  <div class="learn">
+    <div class="what">Kubernetes / Terraform depth</div>
+    <div>Both are listed at medium confidence with <strong>no backing project</strong>. Build a small demonstrable project, or be candid that these are exposure-level.</div>
+    <div class="res">Resource: official docs + one hands-on lab.</div>
+  </div>
+
+  <div class="learn">
+    <div class="what">Tech strategy / RFC writing</div>
+    <div>No RFC, design-doc, or ADR evidence in the wiki. Staff candidates show written technical judgment.</div>
+    <div class="res">Resource: read public RFC/ADR examples; draft one for a past project (see plan, Week 1).</div>
+  </div>
+
+  <div class="learn">
+    <div class="what">Org-level influence / cross-team work</div>
+    <div>No evidence of driving decisions beyond your immediate team.</div>
+    <div class="res">Resource: prepare narratives; no shortcut &mdash; rehearse in Week 2 behavioral mock.</div>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>2-Week Practice Plan</h2>
+  <div class="weeks">
+    <div class="week">
+      <h3>Week 1 &mdash; breadth, fundamentals, gap-closing</h3>
+      <ul class="check">
+        <li><input type="checkbox"> <strong>D1&ndash;2:</strong> DS fundamentals refresh; re-derive exactly-once end to end.</li>
+        <li><input type="checkbox"> <strong>D3:</strong> Go concurrency + service-design drills; sketch the microservices decomposition.</li>
+        <li><input type="checkbox"> <strong>D4:</strong> Airflow/ETL + Redshift tuning; write up the 6h&rarr;90min bottleneck.</li>
+        <li><input type="checkbox"> <strong>D5 (gap):</strong> Resolve scope ambiguities truthfully &mdash; team sizes, &ldquo;led&rdquo; scope, how the 30% drop was measured.</li>
+        <li><input type="checkbox"> <strong>D6 (gap):</strong> Draft one RFC/design doc retroactively for the Kafka pipeline or migration.</li>
+        <li><input type="checkbox"> <strong>D7:</strong> Rest; light AWS + SAA-lapse talking-point review.</li>
+      </ul>
+    </div>
+    <div class="week">
+      <h3>Week 2 &mdash; mocks + deep dives</h3>
+      <ul class="check">
+        <li><input type="checkbox"> <strong>D8:</strong> System-design mock &mdash; order-processing at scale (home turf).</li>
+        <li><input type="checkbox"> <strong>D9:</strong> Deep-dive mock on exactly-once / Kafka internals.</li>
+        <li><input type="checkbox"> <strong>D10:</strong> Behavioral/leadership mock &mdash; cross-team influence + mentorship (weakest area, most reps).</li>
+        <li><input type="checkbox"> <strong>D11:</strong> Go/coding mock (concurrency, service-level problem).</li>
+        <li><input type="checkbox"> <strong>D12:</strong> Second system-design mock outside your comfort domain (test breadth).</li>
+        <li><input type="checkbox"> <strong>D13:</strong> Rehearse all four STAR stories aloud; sharpen metrics + state scope precisely.</li>
+        <li><input type="checkbox"> <strong>D14:</strong> Light review + logistics; rest before the loop.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Generated 2026-05-31 &middot; Draft companion to <code>profile.html</code> &mdash; not a final document.
+  Canonical prep content lives in <code>interview-prep.md</code>.
+</footer>
+
+<script>
+  document.getElementById('pdf-btn').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>

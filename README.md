@@ -8,6 +8,10 @@ An LLM-maintained knowledge base about your professional life — resumes, proje
 
 ![Career Wiki demo](assets/demo.gif)
 
+## Why I built this
+
+13 years as an engineer, and my own work was always scattered — old resumes, half-remembered projects, accomplishments I could never recall in interviews. I learn by building, not collecting credentials, so I built the tool I needed: drop in raw material, get back a clean, cross-linked career wiki that writes tailored CVs and interview stories on demand. Inspired by Karpathy's LLM Wiki idea. All hand-editable Markdown.
+
 ## What it's for
 
 In priority order:

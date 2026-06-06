@@ -22,13 +22,15 @@ In priority order:
 4. **Portfolio / LinkedIn content.**
 5. **Self-reflection and planning** — spot gaps, plan next moves.
 
-## How it works
+## Getting started
 
-You drop source documents (resumes, performance reviews, project write-ups, recommendation letters, transcripts, screenshots, etc.) into `raw/`. Claude Code ingests them on request, normalizes the contents into a wiki of cross-linked Markdown pages under `wiki/`, and keeps an append-only `log.md` of everything it has done.
+1. Open this directory in [Claude Code](https://claude.com/claude-code).
+2. Drop a few documents into `raw/` — old resumes, project notes, anything career-relevant.
+3. Start a session. Claude will greet you with the A / B / C menu.
+4. Pick **A** and ask the maintainer to ingest what you just dropped in.
+5. From then on, ask questions, tailor applications, or generate profiles whenever you need them.
 
-`raw/` is **read-only** to the agents — your originals are never edited, moved, or deleted. The wiki is fully hand-editable; if you don't like how something was summarized, just edit the file.
-
-Your own `wiki/` and `log.md` are git-ignored so your real career data stays private. To see the shape of a populated wiki first, browse [`example-wiki/`](example-wiki/) and [`example-log.md`](example-log.md) — a complete sample built from the fictional "Maya Sharma" persona.
+The wiki gets richer the more you feed it. Treat `raw/` as your inbox.
 
 ## Tailor for a job
 
@@ -51,15 +53,13 @@ This project ships with two specialized subagents under `.claude/agents/`. The r
 
 At session start, Claude greets you with an **A / B / C** menu so you can pick which agent to invoke (or handle a one-off schema edit inline). See `CLAUDE.md` for the directory layout and full page schema — the canonical source where conventions evolve.
 
-## Getting started
+## How it works
 
-1. Open this directory in [Claude Code](https://claude.com/claude-code).
-2. Drop a few documents into `raw/` — old resumes, project notes, anything career-relevant.
-3. Start a session. Claude will greet you with the A / B / C menu.
-4. Pick **A** and ask the maintainer to ingest what you just dropped in.
-5. From then on, ask questions, tailor applications, or generate profiles whenever you need them.
+You drop source documents (resumes, performance reviews, project write-ups, recommendation letters, transcripts, screenshots, etc.) into `raw/`. Claude Code ingests them on request, normalizes the contents into a wiki of cross-linked Markdown pages under `wiki/`, and keeps an append-only `log.md` of everything it has done.
 
-The wiki gets richer the more you feed it. Treat `raw/` as your inbox.
+`raw/` is **read-only** to the agents — your originals are never edited, moved, or deleted. The wiki is fully hand-editable; if you don't like how something was summarized, just edit the file.
+
+Your own `wiki/` and `log.md` are git-ignored so your real career data stays private. To see the shape of a populated wiki first, browse [`example-wiki/`](example-wiki/) and [`example-log.md`](example-log.md) — a complete sample built from the fictional "Maya Sharma" persona.
 
 ## Privacy
 

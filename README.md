@@ -28,6 +28,8 @@ You drop source documents (resumes, performance reviews, project write-ups, reco
 
 `raw/` is **read-only** to the agents — your originals are never edited, moved, or deleted. The wiki is fully hand-editable; if you don't like how something was summarized, just edit the file.
 
+Your own `wiki/` and `log.md` are git-ignored so your real career data stays private. To see the shape of a populated wiki first, browse [`example-wiki/`](example-wiki/) and [`example-log.md`](example-log.md) — a complete sample built from the fictional "Maya Sharma" persona.
+
 ## The two agents
 
 This project ships with two specialized subagents under `.claude/agents/`. The root `CLAUDE.md` acts as a router that dispatches to the right one.
